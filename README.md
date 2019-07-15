@@ -1,7 +1,7 @@
 Simple CRUD project to handle users for learning react hooks.
 
-#Install
+# Install
 
-clone repo
-npm install
-npm start
+* clone repo
+* npm install
+* npm start
