@@ -1,6 +1,8 @@
 import React from 'react'
 
 const UserTable = props => (
+
+
   <table>
     <thead>
       <tr>
@@ -16,8 +18,8 @@ const UserTable = props => (
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>
-                    <button className="button muted-button">Edit</button>
-                    <button className="button muted-button">Delete</button>
+                    <button className="button muted-button" onClick={() => {props.editUser(user)}}>Edit</button>
+                    <button className="button muted-button" onClick={() => {props.deleteUser(user.id)}}>Delete</button>
                 </td>
             </tr>
           ))
