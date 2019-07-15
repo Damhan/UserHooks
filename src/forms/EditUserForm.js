@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const EditUserForm = props => {
 
@@ -15,6 +15,10 @@ const EditUserForm = props => {
         props.updateUser(user.id,user)
     }
 
+    useEffect(() => {
+      setUser(props.currentUser)
+    }, [props])
+
   return (
     <form onSubmit={submitFunc}>
       <label>Name</label>
@@ -22,7 +26,7 @@ const EditUserForm = props => {
       <label>Username</label>
       <input type="text" name="username" value={user.username} onChange={handleInputChange} />
       <button>Update User</button>
-      <button onClick={props.setEditing(false)} className="button muted-button">Cancel</button>
+      <button onClick={() => props.setEditing(false)} className="button muted-button">Cancel</button>
     </form>
   )
 }

@@ -10,7 +10,7 @@ const App = () => {
 
   const [users, setUsers] = useState(usersData)
 
-  const [editing, setEditing] = useState(true)
+  const [editing, setEditing] = useState(false)
 
   const initialEditState = {id:null, name:'', username:''}
 
@@ -32,6 +32,7 @@ const App = () => {
   }
 
   const deleteUser = id => {
+    setEditing(false)
     setUsers(users.filter(user => user.id !== id))
   }
 
